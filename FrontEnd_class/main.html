@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <title>201444087 신건호 과제</title>
+    </style>
+
+    <!-- 첫 번째 테이블 sorting과 counting -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $(".product").on("keyup", function () {
+                getProdNum();
+            });
+
+            $("#btnSort").on("click", function () {
+                sortDealer();
+            });
+
+            function getProdNum() {
+                var num = 0;
+                var $prodNum = $("#prodNum");
+                $(".product").each(function () {
+                    if ($(this).val() !== "") {
+                        num += 1;
+                    }
+                });
+                $prodNum.val(num);
+            }
+
+            function swapValue(ob1, ob2) {
+                var temp;
+                temp = ob1.value;
+                ob1.value = ob2.value;
+                ob2.value = temp;
+            }
+
+            function sortDealer() {
+                var count = $(".dealer").length;
+                for (var i = 0; i < count - 1; i++) {
+                    for (var j = i + 1; j < count; j++) {
+                        if ($(".dealer")[i].value < $(".dealer")[j].value) {
+                            swapValue($(".dealer")[i], $(".dealer")[j]);
+                            swapValue($(".product")[i], $(".product")[j]);
+                            swapValue($(".price")[i], $(".price")[j]);
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- 두 번째 테이블 sorting과 counting -->
+    <script>
+        $(function () {
+            $(".product2").on("keyup", function () {
+                getProdNum();
+            });
+
+            $("#btnSort2").on("click", function () {
+                sortDealer();
+            });
+
+            function getProdNum() {
+                var num = 0;
+                var $prodNum = $("#prodNum2");
+                $(".product2").each(function () {
+                    if ($(this).val() !== "") {
+                        num += 1;
+                    }
+                });
+                $prodNum.val(num);
+            }
+
+            function swapValue(ob1, ob2) {
+                var temp;
+                temp = ob1.value;
+                ob1.value = ob2.value;
+                ob2.value = temp;
+            }
+
+            function sortDealer() {
+                var count = $(".dealer2").length;
+                for (var i = 0; i < count - 1; i++) {
+                    for (var j = i + 1; j < count; j++) {
+                        if ($(".dealer2")[i].value < $(".dealer2")[j].value) {
+                            swapValue($(".dealer2")[i], $(".dealer2")[j]);
+                            swapValue($(".product2")[i], $(".product2")[j]);
+                            swapValue($(".price2")[i], $(".price2")[j]);
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- 세 번째 테이블 sorting과 counting -->
+    <script>
+        $(function () {
+            $(".product3").on("keyup", function () {
+                getProdNum();
+            });
+
+            $("#btnSort3").on("click", function () {
+                sortDealer();
+            });
+
+            function getProdNum() {
+                var num = 0;
+                var $prodNum = $("#prodNum3");
+                $(".product3").each(function () {
+                    if ($(this).val() !== "") {
+                        num += 1;
+                    }
+                });
+                $prodNum.val(num);
+            }
+
+            function swapValue(ob1, ob2) {
+                var temp;
+                temp = ob1.value;
+                ob1.value = ob2.value;
+                ob2.value = temp;
+            }
+
+            function sortDealer() {
+                var count = $(".dealer3").length;
+                for (var i = 0; i < count - 1; i++) {
+                    for (var j = i + 1; j < count; j++) {
+                        if ($(".dealer3")[i].value < $(".dealer3")[j].value) {
+                            swapValue($(".dealer3")[i], $(".dealer3")[j]);
+                            swapValue($(".product3")[i], $(".product3")[j]);
+                            swapValue($(".price3")[i], $(".price3")[j]);
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <h1 class="first_text">Front-end/RESTful 과제</h1>
+    <h2 class="second_text"> 가계부 </h2>
+
+    <table class="main_table" border="1">
+
+        <!-- 첫번째 테이블-->
+        <th><input type="date" style="text-align:center;" class="table_color_green"></th>
+        <th class="table_color_green">수입</th>
+        <th colspan="2"><input type="text" size="47" class="table_color_green" style="text-align:left;" name='income'
+                id='income' onkeyup='call()'></th>
+        <tr>
+            <td class="table_center table_color_green">번호</td>
+            <td class="table_center table_color_green">품목</td>
+            <td class="table_center table_color_green">가격</td>
+            <td class="table_center table_color_green">구입처 <button type="button" id="btnSort">정렬</button> </td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> I </td>
+            <td><input type="text" class="table_color_yellow product"></td>
+            <td><input type="text" class="table_color_yellow price" style="text-align:right;" name='buy1' id='buy1'
+                    onkeyup='call()'></td>
+            <td><input type="text" class="table_color_yellow dealer"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> II </td>
+            <td><input type="text" class="table_color_yellow product"></td>
+            <td><input type="text" class="table_color_yellow price" style="text-align:right;" name='buy2' id='buy2'
+                    onkeyup='call()'></td>
+            <td><input type="text" class="table_color_yellow dealer"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> III </td>
+            <td><input type="text" class="table_color_yellow product"></td>
+            <td><input type="text" class="table_color_yellow price" style="text-align:right;" name='buy3' id='buy3'
+                    onkeyup='call()'></td>
+            <td><input type="text" class="table_color_yellow dealer"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 개수 </td>
+            <td colspan="3" class="table_center table_color_yg"><input type='text' style="text-align:left;" id="prodNum"
+                    readonly="readonly" size="72" class="table_center table_color_yg"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 총지출 </td>
+            <td colspan="3"><input type='text' style="text-align:left;" readonly="readonly" size="72"
+                    class="table_center table_color_yg" name='spending' id='spending'></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 잔액 </td>
+            <td colspan="3" class="table_center table_color_yg"><input type='text' style="text-align:left;"
+                    readonly="readonly" size="72" name='money' id='money' class="table_center table_color_yg"></td>
+        </tr>
+
+        <!-- 두 번째 테이블-->
+        <th><input type="date" class="table_color_green" style="text-align:right;"></th>
+        <th class="table_color_green">수입</th>
+        <th colspan="2"><input type="text" size="47" class="table_color_green" style="text-align:left;" name='income2'
+                id='income2' onkeyup='call2()'></th>
+        <tr>
+            <td class="table_center table_color_green">번호</td>
+            <td class="table_center table_color_green">품목</td>
+            <td class="table_center table_color_green">가격</td>
+            <td class="table_center table_color_green">구입처 <button type="button" id="btnSort2">정렬</button> </td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> I </td>
+            <td><input type="text" class="table_color_yellow product2"></td>
+            <td><input type="text" class="table_color_yellow price2" style="text-align:right;" name='buy4' id='buy4'
+                    onkeyup='call2()'></td>
+            <td><input type="text" class="table_color_yellow dealer2"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> II </td>
+            <td><input type="text" class="table_color_yellow product2"></td>
+            <td><input type="text" class="table_color_yellow price2" style="text-align:right;" name='buy5' id='buy5'
+                    onkeyup='call2()'></td>
+            <td><input type="text" class="table_color_yellow dealer2"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> III </td>
+            <td><input type="text" class="table_color_yellow product2"></td>
+            <td><input type="text" class="table_color_yellow price2" style="text-align:right;" name='buy6' id='buy6'
+                    onkeyup='call2()'></td>
+            <td><input type="text" class="table_color_yellow dealer2"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> IV </td>
+            <td><input type="text" class="table_color_yellow product2"></td>
+            <td><input type="text" class="table_color_yellow price2" style="text-align:right;" name='buy7' id='buy7'
+                    onkeyup='call2()'></td>
+            <td><input type="text" class="table_color_yellow dealer2"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 개수 </td>
+            <td colspan="3" class="table_center table_color_yg"><input type='text' style="text-align:left;"
+                    id="prodNum2" readonly="readonly" size="72" class="table_center table_color_yg"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 총지출 </td>
+            <td colspan="3"><input type='text' readonly="readonly" style="text-align:left;" size="72"
+                    class="table_center table_color_yg" name='spending2' id='spending2'></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 잔액 </td>
+            <td colspan="3" class="table_center table_color_yg"><input type='text' style="text-align:left;"
+                    readonly="readonly" size="72" name='money2' id='money2' class="table_center table_color_yg"></td>
+        </tr>
+
+        <!-- 세 번째 테이블-->
+        <th><input type="date" class="table_color_green" style="text-align:right;"></th>
+        <th class="table_color_green">수입</th>
+        <th colspan="2"><input type="text" size="47" class="table_color_green" style="text-align:left;" name='income3'
+                id='income3' onkeyup='call3()'></th>
+        <tr>
+            <td class="table_center table_color_green">번호</td>
+            <td class="table_center table_color_green">품목</td>
+            <td class="table_center table_color_green">가격</td>
+            <td class="table_center table_color_green">구입처 <button type="button" id="btnSort3">정렬</button> </td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> I </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy8' id='buy8'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> II </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy9' id='buy9'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> III </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy10' id='buy10'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> IV </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy11' id='buy11'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> V </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy12' id='buy12'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> VI </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy13' id='buy13'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yellow"> VII </td>
+            <td><input type="text" class="table_color_yellow product3"></td>
+            <td><input type="text" class="table_color_yellow price3" style="text-align:right;" name='buy14' id='buy14'
+                    onkeyup='call3()'></td>
+            <td><input type="text" class="table_color_yellow dealer3"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 개수 </td>
+            <td colspan="3" class="table_center table_color_yg"><input type='text' style="text-align:left;"
+                    id="prodNum3" readonly="readonly" size="72" class="table_center table_color_yg"></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 총지출 </td>
+            <td colspan="3"><input type='text' style="text-align:left;" readonly="readonly" size="72"
+                    class="table_center table_color_yg" name='spending3' id='spending3'></td>
+        </tr>
+        <tr>
+            <td class="table_center table_color_yg"> 잔액 </td>
+            <td colspan="3" class="table_center table_color_yg"><input type='text' style="text-align:left;"
+                    readonly="readonly" size="72" name='money3' id='money3' class="table_center table_color_yg"></td>
+        </tr>
+    </table>
+
+    <br>
+
+
+    <!-- 자바 스크립트 부분 -->
+    <script>
+        function commafy(inVal) {
+            var arrWhole = (inVal + "").split(".");
+            var arrTheNumber = arrWhole[0].split("").reverse();
+            var newNum = Array();
+            for (var i = 0; i < arrTheNumber.length; i++) {
+                newNum[newNum.length] = ((i % 3 === 2) && (i < arrTheNumber.length - 1)) ? "," + arrTheNumber[i] :
+                    arrTheNumber[i];
+            }
+            var returnNum = newNum.reverse().join("");
+            if (arrWhole[1]) {
+                returnNum += "." + arrWhole[1];
+            }
+            return returnNum;
+        }
+    </script>
+    <script language='javascript'>
+        let ById = function (id) {
+            return document.getElementById(id);
+        }
+        let ToFloat = (id) => {
+            let s = ById(id).value;
+            if (s == "") s = "0"
+            return parseFloat(s.replace(/,/g, ''));
+        }
+
+        function reformat(curId) {
+            let selstart
+            let oldvalue = ById(curId).value
+            selstart = ById(curId).selectionStart;
+            newvalue = ToFloat(curId).toLocaleString('ko-KR', {
+                maximumFractionDigits: 2
+            })
+            if (oldvalue != newvalue) {
+                let endsWithDot = false;
+                if (oldvalue != "") {
+                    endsWithDot = oldvalue.charAt(oldvalue.length - 1) == '.'
+                }
+                if (endsWithDot) newvalue += ".";
+                ById(curId).value = newvalue;
+                ById(curId).selectionStart = ById(curId).selectionEnd = ById(curId).selectionStart = selstart + 1;
+            }
+        }
+
+        // 첫 번째 테이블 연산을 수행하는 함수 
+        function call() {
+            if (ById("buy1").value && ById("buy2").value && ById("buy3").value) {
+                let num = ToFloat('buy1') + ToFloat('buy2') + ToFloat('buy3');
+                let num2 = ToFloat('income');
+                let num3 = num2 - num;
+                ById('spending').value = num.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('income').value = num2.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('money').value = (num3 < 0? '[적자] ' : '') + num3.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('money').style.color = num3 >= 0? 'black' : 'red'
+            }
+            reformat('buy1')
+            reformat('buy2')
+            reformat('buy3')
+        }
+
+        // 두 번째 테이블 연산을 수행하는 함수 
+        function call2() {
+            if (ById("buy4").value && ById("buy5").value && ById("buy6").value && ById("buy7").value) {
+                let num = ToFloat('buy4') + ToFloat('buy5') + ToFloat('buy6') + ToFloat('buy7');
+                let num2 = ToFloat('income2');
+                let num3 = num2 - num;
+                ById('spending2').value = num.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('income2').value = num2.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('money2').value = (num3 < 0? '[적자] ' : '') + num3.toLocaleString('ko-KR', {
+                maximumFractionDigits: 2
+                })
+                ById('money2').style.color = num3 >= 0? 'black' : 'red'
+            }
+            reformat('buy4')
+            reformat('buy5')
+            reformat('buy6')
+            reformat('buy7')
+        }
+
+        // 세 번째 테이블 연산을 수행하는 함수
+        function call3() {
+            if (ById("buy8").value && ById("buy9").value && ById("buy10").value && ById("buy11").value &&
+                ById("buy12").value && ById("buy13").value && ById("buy14").value) {
+                let num = ToFloat('buy8') + ToFloat('buy9') + ToFloat('buy10') + ToFloat('buy11') + ToFloat('buy12') +
+                    ToFloat('buy13') + ToFloat('buy14');
+                let num2 = ToFloat('income3');
+                let num3 = num2 - num;
+                ById('spending3').value = num.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('income3').value = num2.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('money3').value = (num3 < 0? '[적자] ' : '') + num3.toLocaleString('ko-KR', {
+                    maximumFractionDigits: 2
+                })
+                ById('money3').style.color = num3 >= 0? 'black' : 'red'
+            }
+            reformat('buy8')
+            reformat('buy9')
+            reformat('buy10')
+            reformat('buy11')
+            reformat('buy12')
+            reformat('buy13')
+            reformat('buy14')
+        }
+    </script>
+</body>
+
+</html>
