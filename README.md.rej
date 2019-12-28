@@ -1,0 +1,9 @@
+diff a/README.md b/README.md	(rejected hunks)
+@@ -1 +0,4 @@
+-# SchoolClass
+\ No newline at end of file
++# SchoolClass
++
++1. **2019.12.28**
++* first commit test
+\ No newline at end of file
